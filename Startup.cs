@@ -32,6 +32,8 @@ namespace Comander
       services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
 
       services.AddDbContext<CommanderContext>(opt => opt.UseSqlite(Configuration.GetConnectionString("CommanderConnection")));
+
+      services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
